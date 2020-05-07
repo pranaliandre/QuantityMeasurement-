@@ -7,6 +7,7 @@ namespace QuantityMeasurementTest
     public class Tests
     {
         readonly Length compareLength = new Length();
+        readonly Volume compareVolume = new Volume();
         [SetUp]
         public void Setup()
         {
@@ -331,6 +332,15 @@ namespace QuantityMeasurementTest
             double addTwoInch = 3.0;
             Assert.AreEqual(addTwoInch, oneInchOneCentimeter);
         }
-
+        /// <summary>
+        /// Test Case 1.29 Given 1 gallon And 3.78 milliliters Should Return Equal.
+        /// </summary>
+        [Test]
+        public void Given1GallonToLiters_ShouldReturnEqual()
+        {
+            double oneGallon = compareVolume.CompareVolume("GALLON_TO_LITRE", 1.0);
+            double oneLiters = 3.78;
+            Assert.AreEqual(oneLiters, oneGallon);
+        }
     }
 }
