@@ -29,7 +29,7 @@ namespace QuantityMeasurementProblem
             this.unit = unit;
             this.value = value;
         }
-       
+
         /// <summary>
         /// Overriding Equals Function.
         /// </summary>
