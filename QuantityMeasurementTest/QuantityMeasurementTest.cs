@@ -84,7 +84,7 @@ namespace QuantityMeasurementTest
             Assert.IsFalse(qualityMeasurement.Equals(null));
         }
         /// <summary>
-        /// Test Case 1.8 Given same Reference when check reference Should Return Equal.
+        /// Test Case 1.8 Given inch same Reference when check reference Should Return Equal.
         /// </summary>
         [Test]
         public void GivenInchReference_WhenCheckRefenece_ShouldReturnTrue()
