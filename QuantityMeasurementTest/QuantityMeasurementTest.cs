@@ -95,5 +95,18 @@ namespace QuantityMeasurementTest
             Boolean equals = (inch1.Equals(referenceFeet));
             Assert.IsTrue(equals);
         }
+        /// <summary>
+        /// Test Case 1.9 Given Inch type data same Should Return Equal.
+        /// </summary>
+        [Test]
+        public void GivenInch1TypeAndInch2SameType_ShouldReturnEqual()
+        {
+            double type1 = qualityMeasurement.GetFeet(1.0);
+            double type2 = qualityMeasurement.GetFeet(0.0);
+            Type typeFeet1 = type1.GetType();
+            Type typeFeet2 = type2.GetType();
+            Assert.AreEqual(typeFeet1, typeFeet2);
+
+        }
     }
 }

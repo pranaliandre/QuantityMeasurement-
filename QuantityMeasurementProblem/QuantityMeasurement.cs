@@ -14,7 +14,7 @@ namespace QuantityMeasurementProblem
         /// <returns></returns>
         public double GetInch(double value)
         {
-            return value*12;
+            return value/12;
         }
         /// <summary>
         /// Method for getting feet
