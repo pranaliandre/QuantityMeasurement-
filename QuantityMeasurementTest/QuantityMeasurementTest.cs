@@ -259,8 +259,18 @@ namespace QuantityMeasurementTest
         public void Given1YardAnd36Inch_ShouldReturnEqual()
         {
             double oneYard = compareLength.CompareLength("YARD_TO_INCH", 1.0);
-            double oneInch = 36.0;
-            Assert.AreEqual(oneYard, oneInch);
+            double thirtySixInch = 36.0;
+            Assert.AreEqual(oneYard, thirtySixInch);
+        }
+        /// <summary>
+        /// Test Case 1.22 Given 36 inch and 1 Yard Should Return Equal.
+        /// </summary>
+        [Test]
+        public void Given36InchAnd1Yard_ShouldReturnEqual()
+        {
+            double thirtySixInch = compareLength.CompareLength("INCH_TO_YARD", 36.0);
+            double oneYard = 1.0;
+            Assert.AreEqual(thirtySixInch, oneYard);
         }
     }
 }
