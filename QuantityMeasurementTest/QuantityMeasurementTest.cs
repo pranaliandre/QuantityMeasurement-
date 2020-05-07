@@ -232,5 +232,15 @@ namespace QuantityMeasurementTest
             double oneYard = 1.0;
             Assert.AreEqual(oneYard, threeFeet);
         }
+        /// <summary>
+        /// Test Case 1.18 Given 1 Feet And 1 Yard Should Return Not Equal.
+        /// </summary>
+        [Test]
+        public void Given1FeetAnd1Yard_ShouldReturnEqual()
+        {
+            double oneFeet = compareLength.CompareLength("FEET_TO_YARD", 1.0);
+            double oneYard = 1.0;
+            Assert.AreNotEqual(oneYard, oneFeet);
+        }
     }
 }
