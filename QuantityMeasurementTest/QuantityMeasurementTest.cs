@@ -22,5 +22,14 @@ namespace QuantityMeasurementTest
             double value2 = qualityMeasurement.GetFeet(0.0);
             Assert.AreEqual(value1, value2, 0.0);
         }
+        /// <summary>
+        /// Test Case 1.2 Given null Feet Should Return False.
+        /// </summary>
+        [Test]
+        public void GivenNullFeetValue_ShouldReturnFalse()
+        {
+            Assert.IsFalse(qualityMeasurement.Equals(null));
+        }
+
     }
 }
