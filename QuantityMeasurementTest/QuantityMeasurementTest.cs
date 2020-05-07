@@ -161,7 +161,18 @@ namespace QuantityMeasurementTest
             //Checking first and second values are equal or not. If it returns false test 
             bool equals = InchValue1.Equals(InchValue2);
             Assert.IsFalse(equals);
-    
+        }
+        /// <summary>
+        /// Test Case 1.13 Given 0 Feet and 0 Inch when check Should Return Equal.
+        /// </summary>
+        [Test]
+        public void Given0FeetAnd0Inch_ShouldReturnEqual()
+        {
+            //Creating Length Instances For Feet and Inch
+            Length feet = new Length(Length.Unit.FEET, 0.0);
+            Length inch = new Length(Length.Unit.INCH, 0.0);
+            //Asserting Values.
+            Assert.AreEqual(feet, inch);
         }
     }
 }
