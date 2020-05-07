@@ -65,5 +65,15 @@ namespace QuantityMeasurementTest
             double value2 = qualityMeasurement.GetFeet(1.0);
             Assert.AreEqual(value1, value2);
         }
+        /// <summary>
+        /// Test Case 1.6 Given 1 Feet And 10 Feet when check Should Return not Equal.
+        /// </summary>
+        [Test]
+        public void Given1FeetAnd10Feet_WhenNotEqual_ShouldReturnNotEqual()
+        {
+            double feet1 = qualityMeasurement.GetFeet(1.0);
+            double feet2 = qualityMeasurement.GetFeet(10.0);
+            Assert.AreNotEqual(feet1, feet2);
+        }
     }
 }
