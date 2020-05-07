@@ -6,7 +6,7 @@ namespace QuantityMeasurementTest
 {
     public class Tests
     {
-        //readonly Length length = new Length();
+        readonly Length compareLength = new Length();
         [SetUp]
         public void Setup()
         {
@@ -221,6 +221,16 @@ namespace QuantityMeasurementTest
             Length inch = new Length(Length.Unit.FEET, 1.0);
             //Asserting Values.
             Assert.AreEqual(feet, inch);
+        }
+        /// <summary>
+        /// Test Case 1.17 Given 3 Feet And 1 Yard Should Return Equal.
+        /// </summary>
+        [Test]
+        public void Given3FeetAnd1Yard_ShouldReturnEqual()
+        {
+            double threeFeet = compareLength.CompareLength("FEET_TO_YARD", 3.0);
+            double oneYard = 1.0;
+            Assert.AreEqual(oneYard, threeFeet);
         }
     }
 }
