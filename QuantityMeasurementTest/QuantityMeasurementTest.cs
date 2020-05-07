@@ -112,10 +112,20 @@ namespace QuantityMeasurementTest
         /// Test Case 1.10 Given 0 Inch And 0 Inch Should Return Equal.
         /// </summary>
         [Test]
-        public void Given1InchAnd1Inch_WhenEqual_ShouldReturnEqual()
+        public void Given0InchAnd0Inch_WhenEqual_ShouldReturnEqual()
         {
             double inch1 = qualityMeasurement.GetInch(0.0);
             double inch2 = qualityMeasurement.GetInch(0.0);
+            Assert.AreEqual(inch1, inch2);
+        }
+        /// <summary>
+        /// Test Case 1.10 Given 1 Inch And 1 Inch when equal Should Return Equal.
+        /// </summary>
+        [Test]
+        public void Given1InchAnd1Inch_WhenEqual_ShouldReturnEqual()
+        {
+            double inch1 = qualityMeasurement.GetInch(1.0);
+            double inch2 = qualityMeasurement.GetInch(1.0);
             Assert.AreEqual(inch1, inch2);
         }
     }
