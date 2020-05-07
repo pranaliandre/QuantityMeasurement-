@@ -30,6 +30,17 @@ namespace QuantityMeasurementTest
         {
             Assert.IsFalse(qualityMeasurement.Equals(null));
         }
-
+        /// <summary>
+        /// Test Case 1.3 Given same Reference when check reference Should Return Equal.
+        /// </summary>
+        [Test]
+        public void GivenSameReference_WhenCheckRefenece_ShouldReturnTrue()
+        {
+            double feet1 = qualityMeasurement.GetFeet(0.0);
+            QuantityMeasurement feet2 = new QuantityMeasurement();
+            double referenceFeet = feet2.GetFeet(0.0);
+            Boolean equals = (feet1.Equals(referenceFeet));
+            Assert.IsTrue(equals);
+        }
     }
 }
