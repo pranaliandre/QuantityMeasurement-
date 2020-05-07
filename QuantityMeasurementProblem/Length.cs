@@ -53,6 +53,12 @@ namespace QuantityMeasurementProblem
                    (this.unit.Equals(Unit.INCH) && ((Length)obj).unit.Equals(Unit.FEET) &&
                    this.value == 12 && ((Length)obj).value == 1);
         }
+        /// <summary>
+        /// Method for conversion
+        /// </summary>
+        /// <param name="conversion"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public double CompareLength(string conversion, double value)
         {
             switch (conversion)

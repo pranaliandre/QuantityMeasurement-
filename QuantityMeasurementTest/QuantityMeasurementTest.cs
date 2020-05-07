@@ -242,5 +242,15 @@ namespace QuantityMeasurementTest
             double oneYard = 1.0;
             Assert.AreNotEqual(oneYard, oneFeet);
         }
+        /// <summary>
+        /// Test Case 1.19 Given 1 inch And 1 Yard Should Return Not Equal.
+        /// </summary>
+        [Test]
+        public void Given1InchAnd1Yard_ShouldReturnNotEqual()
+        {
+            double oneFeet = compareLength.CompareLength("INCH_TO_YARD", 1.0);
+            double oneYard = 1.0;
+            Assert.AreNotEqual(oneYard, oneFeet);
+        }
     }
 }
