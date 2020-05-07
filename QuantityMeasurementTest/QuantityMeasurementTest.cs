@@ -198,5 +198,17 @@ namespace QuantityMeasurementTest
             //Asserting Values.
             Assert.AreNotEqual(feet, inch);
         }
+        /// <summary>
+        /// Test Case 1.16 Given 1 feet And 12 inch Should Return Equal.
+        /// </summary>
+        [Test]
+        public void Given1FeetAnd12Inch_ShouldReturnEqual()
+        {
+            //Creating Length Instances For Feet and Inch
+            Length feet = new Length(Length.Unit.FEET, 1.0);
+            Length inch = new Length(Length.Unit.INCH, 12.0);
+            //Asserting Values.
+            Assert.AreEqual(feet, inch);
+        }
     }
 }

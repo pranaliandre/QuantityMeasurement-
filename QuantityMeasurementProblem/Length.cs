@@ -47,7 +47,10 @@ namespace QuantityMeasurementProblem
             }
             return (this.unit == ((Length)obj).unit) && (this.value == ((Length)obj).value) ||
                    (this.unit.Equals(Unit.FEET) && ((Length)obj).unit.Equals(Unit.INCH) &&
-                   this.value == 0 && ((Length)obj).value == 0);
+                   this.value == 0 && ((Length)obj).value == 0) ||
+                    (this.unit.Equals(Unit.FEET) && ((Length)obj).unit.Equals(Unit.INCH) &&
+                   this.value == 1 && ((Length)obj).value == 12);
+
         }
 
         /// <summary>
