@@ -223,7 +223,7 @@ namespace QuantityMeasurementTest
             Assert.AreEqual(feet, inch);
         }
         /// <summary>
-        /// Test Case 1.17 Given 3 Feet And 1 Yard Should Return Equal.
+        /// Test Case 1.18 Given 3 Feet And 1 Yard Should Return Equal.
         /// </summary>
         [Test]
         public void Given3FeetAnd1Yard_ShouldReturnEqual()
@@ -233,7 +233,7 @@ namespace QuantityMeasurementTest
             Assert.AreEqual(oneYard, threeFeet);
         }
         /// <summary>
-        /// Test Case 1.18 Given 1 Feet And 1 Yard Should Return Not Equal.
+        /// Test Case 1.19 Given 1 Feet And 1 Yard Should Return Not Equal.
         /// </summary>
         [Test]
         public void Given1FeetAnd1Yard_ShouldReturnEqual()
@@ -243,7 +243,7 @@ namespace QuantityMeasurementTest
             Assert.AreNotEqual(oneYard, oneFeet);
         }
         /// <summary>
-        /// Test Case 1.19 Given 1 inch And 1 Yard Should Return Not Equal.
+        /// Test Case 1.20 Given 1 inch And 1 Yard Should Return Not Equal.
         /// </summary>
         [Test]
         public void Given1InchAnd1Yard_ShouldReturnNotEqual()
@@ -251,6 +251,16 @@ namespace QuantityMeasurementTest
             double oneFeet = compareLength.CompareLength("INCH_TO_YARD", 1.0);
             double oneYard = 1.0;
             Assert.AreNotEqual(oneYard, oneFeet);
+        }
+        /// <summary>
+        /// Test Case 1.21 Given 1 yard And 36 inch Should Return Equal.
+        /// </summary>
+        [Test]
+        public void Given1YardAnd36Inch_ShouldReturnEqual()
+        {
+            double oneYard = compareLength.CompareLength("YARD_TO_INCH", 1.0);
+            double oneInch = 36.0;
+            Assert.AreEqual(oneYard, oneInch);
         }
     }
 }
