@@ -342,5 +342,15 @@ namespace QuantityMeasurementTest
             double oneLiters = 3.78;
             Assert.AreEqual(oneLiters, oneGallon);
         }
+        /// <summary>
+        /// Test Case 1.30 Given 1 liter And 100 millitre Should Return Equal.
+        /// </summary>
+        [Test]
+        public void Given1LitersAndOneThousandMiliLitre_ShouldReturnEqual()
+        {
+            double oneLiter = compareVolume.CompareVolume("LITRE_TO_MILLILITER", 1.0);
+            double oneThousandMiliLitre = 1000;
+            Assert.AreEqual(oneThousandMiliLitre, oneLiter);
+        }
     }
 }
