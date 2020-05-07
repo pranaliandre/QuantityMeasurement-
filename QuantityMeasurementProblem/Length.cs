@@ -13,7 +13,12 @@ namespace QuantityMeasurementProblem
         /// <summary>
         /// Enum For Length Unit.
         /// </summary>
-        public enum Unit { FEET, INCH, }
+        public enum Unit
+        {
+            FEET,
+            INCH,
+            CENTIMETER
+        };
 
         //Variables.
         readonly Unit unit;
@@ -84,10 +89,46 @@ namespace QuantityMeasurementProblem
                 case "INCH_TO_CENTIMETER":
                     double inchToCentimeter = value * 2.5;
                     return inchToCentimeter;
+                case "CENTIMETER_TO_INCH":
+                    double centimeterToInch = value / 2.5;
+                    return centimeterToInch;
                 default:
                     Console.WriteLine("Invalid Conversion");
                     return 0;
             }
+        }
+        /// <summary>
+        /// Method for add two length in inch
+        /// </summary>
+        /// <param name="unitOne"></param>
+        /// <param name="valueOne"></param>
+        /// <param name="unitTwo"></param>
+        /// <param name="valueTwo"></param>
+        /// <returns></returns>
+        public double AddTwoLenghtsInInch(Unit unitOne, double valueOne, Unit unitTwo, double valueTwo)
+        {
+            double firstValueInInch = valueOne;
+            double secondValueInInch = valueTwo;
+            //
+            if (unitOne == Unit.INCH && unitTwo == Unit.INCH)
+                return firstValueInInch + secondValueInInch;
+            if (unitOne == Unit.FEET)
+            {
+                firstValueInInch = CompareLength("FEET_TO_INCH", valueOne);
+            }
+            else if (unitOne == Unit.CENTIMETER)
+            {
+                firstValueInInch = CompareLength("CENTIMETER_TO_INCH", valueOne);
+            }
+            if (unitTwo == Unit.FEET)
+            {
+                secondValueInInch = CompareLength("FEETTOINCH", valueOne);
+            }
+            else if (unitTwo == Unit.CENTIMETER)
+            {
+                secondValueInInch = CompareLength("CENTIMETER_TO_INCH", valueOne);
+            }
+            return firstValueInInch + secondValueInInch;
         }
         /// <summary>
         /// Overriding GetHashCode Method.
