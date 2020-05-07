@@ -83,5 +83,17 @@ namespace QuantityMeasurementTest
         {
             Assert.IsFalse(qualityMeasurement.Equals(null));
         }
+        /// <summary>
+        /// Test Case 1.8 Given same Reference when check reference Should Return Equal.
+        /// </summary>
+        [Test]
+        public void GivenInchReference_WhenCheckRefenece_ShouldReturnTrue()
+        {
+            double inch1 = qualityMeasurement.GetInch(0.0);
+            QuantityMeasurement inch2 = new QuantityMeasurement();
+            double referenceFeet = inch2.GetInch(0.0);
+            Boolean equals = (inch1.Equals(referenceFeet));
+            Assert.IsTrue(equals);
+        }
     }
 }
