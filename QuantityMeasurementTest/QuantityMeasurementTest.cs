@@ -282,5 +282,15 @@ namespace QuantityMeasurementTest
             double threeFeet = 3.0;
             Assert.AreEqual(oneYard, threeFeet);
         }
+        /// <summary>
+        /// Test Case 1.24 Given 2 inch and 5 cm Should Return Equal.
+        /// </summary>
+        [Test]
+        public void Given2InchAnd5Centimeter_ShouldReturnEqual()
+        {
+            double twoInch = compareLength.CompareLength("INCH_TO_CENTIMETER", 2.0);
+            double fiveCentimeter = 5.0;
+            Assert.AreEqual(twoInch, fiveCentimeter);
+        }
     }
 }
