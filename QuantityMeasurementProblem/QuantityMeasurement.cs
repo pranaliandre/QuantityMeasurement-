@@ -2,10 +2,9 @@
 namespace QuantityMeasurementProblem
 {
     public class QuantityMeasurement
-    {
-        /// <summary>
-        /// Variable
-        /// </summary>
+    {/// <summary>
+     /// Variable
+     /// </summary>
         public double value;
         /// <summary>
         /// Method for getting inch
@@ -14,7 +13,7 @@ namespace QuantityMeasurementProblem
         /// <returns></returns>
         public double GetInch(double value)
         {
-            return value/12;
+            return value / 12;
         }
         /// <summary>
         /// Method for getting feet
@@ -53,8 +52,8 @@ namespace QuantityMeasurementProblem
         {
             return base.GetHashCode();
         }
-    
-    static void Main(string[] args)
+
+        static void Main(string[] args)
         {
             Console.WriteLine("!!!Welcome to Quantity Measurement");
         }

@@ -6,7 +6,7 @@ namespace QuantityMeasurementTest
 {
     public class Tests
     {
-        readonly QuantityMeasurement qualityMeasurement = new QuantityMeasurement();
+        //readonly Length length = new Length();
         [SetUp]
         public void Setup()
         {
@@ -17,10 +17,12 @@ namespace QuantityMeasurementTest
         [Test]
         public void Given0FeetAnd0Feet_ShouldReturnEqual()
         {
-            //Creating conversion instance
-            double value1 = qualityMeasurement.GetFeet(0.0);
-            double value2 = qualityMeasurement.GetFeet(0.0);
-            Assert.AreEqual(value1, value2, 0.0);
+            //Instance of Feet
+            Length feet1 = new Length(Length.Unit.FEET, 0.0);
+            Length feet2 = new Length(Length.Unit.FEET, 0.0);
+            //Checking first  type and second type values are equal or not. If it returns true test 
+            bool equals = feet1.Equals(feet2);
+            Assert.IsTrue(equals);
         }
         /// <summary>
         /// Test Case 1.2 Given null Feet Should Return False.
@@ -28,7 +30,8 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenNullFeetValue_ShouldReturnFalse()
         {
-            Assert.IsFalse(qualityMeasurement.Equals(null));
+            bool equals = Length.Equals(Length.Unit.FEET, null);
+            Assert.IsFalse(equals);
         }
         /// <summary>
         /// Test Case 1.3 Given same Reference when check reference Should Return Equal.
@@ -36,10 +39,11 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenSameReference_WhenCheckRefenece_ShouldReturnTrue()
         {
-            double feet1 = qualityMeasurement.GetFeet(0.0);
-            QuantityMeasurement feet2 = new QuantityMeasurement();
-            double referenceFeet = feet2.GetFeet(0.0);
-            Boolean equals = (feet1.Equals(referenceFeet));
+            //Instance of Feet
+            Length referanceFeet1 = new Length(Length.Unit.FEET, 0.0);
+            Length referanceFeet2 = referanceFeet1;
+            //Checking first reference value and second reference values are equal or not. If it returns true test 
+            Boolean equals = (referanceFeet1.Equals(referanceFeet2));
             Assert.IsTrue(equals);
         }
         /// <summary>
@@ -48,12 +52,13 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenFeet1TypeAndFeet2SameType_ShouldReturnEqual()
         {
-            double type1 = qualityMeasurement.GetFeet(1.0);
-            double type2 = qualityMeasurement.GetFeet(0.0);
-            Type typeFeet1 = type1.GetType();
-            Type typeFeet2 = type2.GetType();
+            //Instance of Feet
+            Length feetValue1 = new Length(Length.Unit.FEET, 0.0);
+            Length feetValue2 = new Length(Length.Unit.FEET, 0.0);
+            Type typeFeet1 = feetValue1.GetType();
+            Type typeFeet2 = feetValue2.GetType();
+            //Checking first  type and second type values are equal or not. If it returns true test 
             Assert.AreEqual(typeFeet1, typeFeet2);
-
         }
         /// <summary>
         /// Test Case 1.5 Given 1 Feet And 1 Feet Should Return Equal.
@@ -61,9 +66,12 @@ namespace QuantityMeasurementTest
         [Test]
         public void Given1FeetAnd1Feet_WhenEqual_ShouldReturnEqual()
         {
-            double value1 = qualityMeasurement.GetFeet(1.0);
-            double value2 = qualityMeasurement.GetFeet(1.0);
-            Assert.AreEqual(value1, value2);
+            //Instance of Feet
+            Length feetValue1 = new Length(Length.Unit.FEET, 1.0);
+            Length feetValue2 = new Length(Length.Unit.FEET, 1.0);
+            //Checking first and second values are equal or not. If it returns true test 
+            bool equals = feetValue1.Equals(feetValue2);
+            Assert.IsTrue(equals);
         }
         /// <summary>
         /// Test Case 1.6 Given 1 Feet And 10 Feet when check Should Return not Equal.
@@ -71,9 +79,12 @@ namespace QuantityMeasurementTest
         [Test]
         public void Given1FeetAnd10Feet_WhenNotEqual_ShouldReturnNotEqual()
         {
-            double feet1 = qualityMeasurement.GetFeet(1.0);
-            double feet2 = qualityMeasurement.GetFeet(10.0);
-            Assert.AreNotEqual(feet1, feet2);
+            //Instance of Feet
+            Length feetValue1 = new Length(Length.Unit.FEET, 1.0);
+            Length feetValue2 = new Length(Length.Unit.FEET, 10.0);
+            //Checking first and second values are equal or not. If it returns false test Pass
+            bool equals = feetValue1.Equals(feetValue2);
+            Assert.IsFalse(equals);
         }
         /// <summary>
         /// Test Case 1.7 Given null Inch Should Return false.
@@ -81,7 +92,9 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenNullInchValue_ShouldReturnFalse()
         {
-            Assert.IsFalse(qualityMeasurement.Equals(null));
+            //Instance of Inch
+            bool equals = Length.Equals(Length.Unit.INCH, null);
+            Assert.IsFalse(equals);
         }
         /// <summary>
         /// Test Case 1.8 Given inch same Reference when check reference Should Return Equal.
@@ -89,10 +102,11 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenInchReference_WhenCheckRefenece_ShouldReturnTrue()
         {
-            double inch1 = qualityMeasurement.GetInch(0.0);
-            QuantityMeasurement inch2 = new QuantityMeasurement();
-            double referenceFeet = inch2.GetInch(0.0);
-            Boolean equals = (inch1.Equals(referenceFeet));
+            //Instance of Inch
+            Length referanceInch1 = new Length(Length.Unit.INCH, 0.0);
+            Length referanceInch2 = referanceInch1;
+            ////Checking first reference and second reference values are equal or not. If it returns true test 
+            Boolean equals = (referanceInch1.Equals(referanceInch2));
             Assert.IsTrue(equals);
         }
         /// <summary>
@@ -101,12 +115,13 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenInch1TypeAndInch2SameType_ShouldReturnEqual()
         {
-            double type1 = qualityMeasurement.GetFeet(1.0);
-            double type2 = qualityMeasurement.GetFeet(0.0);
-            Type typeFeet1 = type1.GetType();
-            Type typeFeet2 = type2.GetType();
+            //Instance of Inch
+            Length InchValue1 = new Length(Length.Unit.INCH, 0.0);
+            Length InchValue2 = new Length(Length.Unit.INCH, 0.0);
+            Type typeFeet1 = InchValue1.GetType();
+            Type typeFeet2 = InchValue2.GetType();
+            //Checking first  type and second type values are equal or not. If it returns true test 
             Assert.AreEqual(typeFeet1, typeFeet2);
-
         }
         /// <summary>
         /// Test Case 1.10 Given 0 Inch And 0 Inch Should Return Equal.
@@ -114,29 +129,39 @@ namespace QuantityMeasurementTest
         [Test]
         public void Given0InchAnd0Inch_WhenEqual_ShouldReturnEqual()
         {
-            double inch1 = qualityMeasurement.GetInch(0.0);
-            double inch2 = qualityMeasurement.GetInch(0.0);
-            Assert.AreEqual(inch1, inch2);
+            //Instance of Inch
+            Length Inch1 = new Length(Length.Unit.INCH, 0.0);
+            Length Inch2 = new Length(Length.Unit.INCH, 0.0);
+            //Checking first and second values are equal or not. If it returns true test 
+            bool equals = Inch1.Equals(Inch2);
+            Assert.IsTrue(equals);
         }
         /// <summary>
-        /// Test Case 1.10 Given 1 Inch And 1 Inch when equal Should Return Equal.
+        /// Test Case 1.11 Given 1 Inch And 1 Inch when equal Should Return Equal.
         /// </summary>
         [Test]
         public void Given1InchAnd1Inch_WhenEqual_ShouldReturnEqual()
         {
-            double inch1 = qualityMeasurement.GetInch(1.0);
-            double inch2 = qualityMeasurement.GetInch(1.0);
-            Assert.AreEqual(inch1, inch2);
+            //Instance of Inch
+            Length Inch1 = new Length(Length.Unit.INCH, 1.0);
+            Length Inch2 = new Length(Length.Unit.INCH, 1.0);
+            //Checking first and second values are equal or not. If it returns true test 
+            bool equals = Inch1.Equals(Inch2);
+            Assert.IsTrue(equals);
         }
         /// <summary>
-        /// Test Case 1.10 Given 1 Feet And 10 Feet when check Should Return not Equal.
+        /// Test Case 1.12 Given 1 Feet And 10 Feet when check Should Return not Equal.
         /// </summary>
         [Test]
         public void Given1InchAnd10Inch_WhenNotEqual_ShouldReturnNotEqual()
         {
-            double feet1 = qualityMeasurement.GetFeet(1.0);
-            double feet2 = qualityMeasurement.GetFeet(10.0);
-            Assert.AreNotEqual(feet1, feet2);
+            //Instance of Inch
+            Length InchValue1 = new Length(Length.Unit.INCH, 1.0);
+            Length InchValue2 = new Length(Length.Unit.INCH, 10.0);
+            //Checking first and second values are equal or not. If it returns false test 
+            bool equals = InchValue1.Equals(InchValue2);
+            Assert.IsFalse(equals);
+    
         }
     }
 }
