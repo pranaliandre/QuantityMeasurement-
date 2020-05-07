@@ -75,5 +75,13 @@ namespace QuantityMeasurementTest
             double feet2 = qualityMeasurement.GetFeet(10.0);
             Assert.AreNotEqual(feet1, feet2);
         }
+        /// <summary>
+        /// Test Case 1.7 Given null Inch Should Return false.
+        /// </summary>
+        [Test]
+        public void GivenNullInchValue_ShouldReturnFalse()
+        {
+            Assert.IsFalse(qualityMeasurement.Equals(null));
+        }
     }
 }

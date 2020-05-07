@@ -12,9 +12,18 @@ namespace QuantityMeasurementProblem
         /// </summary>
         /// <param name=value"></param>
         /// <returns></returns>
-        public double GetFeet(double value)
+        public double GetInch(double value)
         {
             return value*12;
+        }
+        /// <summary>
+        /// Method for getting feet
+        /// </summary>
+        /// <param name=value"></param>
+        /// <returns></returns>
+        public double GetFeet(double value)
+        {
+            return value * 12;
         }
         /// <summary>
         /// Override Equals Method.
