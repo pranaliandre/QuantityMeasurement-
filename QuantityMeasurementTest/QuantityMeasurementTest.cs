@@ -8,6 +8,7 @@ namespace QuantityMeasurementTest
     {
         readonly Length compareLength = new Length();
         readonly Volume compareVolume = new Volume();
+        readonly Weight compareWeight = new Weight();
         [SetUp]
         public void Setup()
         {
@@ -371,6 +372,36 @@ namespace QuantityMeasurementTest
             double oneLitreOneThousandMiliLitre = compareVolume.AddTwoVolumesInLitres(Volume.Unit.LITRE, 1.0, Volume.Unit.MILLILITER, 1000);
             double addInLitre = 2;
             Assert.AreEqual(addInLitre, oneLitreOneThousandMiliLitre);
+        }
+        /// <summary>
+        /// Test Case 1.33 Given 1 kg And 1000 gram Should Return Equal.
+        /// </summary>
+        [Test]
+        public void Given1KgAnd1000Gram_ShouldReturnEqual()
+        {
+            double oneKilogram = compareWeight.CompareWeight("KILOGRAM_TO_GRAM", 1.0);
+            double oneThousandGrams = 1000;
+            Assert.AreEqual(oneThousandGrams, oneKilogram);
+        }
+        /// <summary>
+        /// Test Case 1.34 Given 1 tonne And 1000 kilograms Should Return Equal.
+        /// </summary>
+        [Test]
+        public void Given1TonneAnd1000Kilograms_ShouldReturnEqual()
+        {
+            double oneKilogram = compareWeight.CompareWeight("TONNE_TO_KILOGRAM", 1.0);
+            double oneThousandKilograms = 1000;
+            Assert.AreEqual(oneThousandKilograms, oneKilogram);
+        }
+        /// <summary>
+        /// Test Case 1.35 Given 1 tonne And 1000 gram Should Return Equal.
+        /// </summary>
+        [Test]
+        public void GivenOneTonneAndOneThousandGram_ReturnAddInLitre()
+        {
+            double oneTonneOneThousandGram = compareWeight.AddTwoWeightInWeights(Weight.Unit.TONNE, 1.0, Weight.Unit.GRAM, 1000);
+            double addTonneAndGram = 1001;
+            Assert.AreEqual(addTonneAndGram, oneTonneOneThousandGram);
         }
     }
 }
