@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace QuantityMeasurementProblem
 {
     public class Volume
     {
+        /// <summary>
+        /// variable
+        /// </summary>
         Unit unit;
         readonly private double value;
         /// <summary>
@@ -16,6 +16,9 @@ namespace QuantityMeasurementProblem
             GALLON,
             LITRE,
             MILLILITER,
+            GALLON_TO_LITRE,
+            LITRE_TO_MILLILITER,
+            MILILITRE_TO_LITER
         };
         /// <summary>
         /// Default Constructor
@@ -37,17 +40,17 @@ namespace QuantityMeasurementProblem
         /// <param name="conversion"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public double CompareVolume(string conversion, double value)
+        public double CompareVolume(Unit unit, double value)
         {
-            switch (conversion)
+            switch (unit)
             {
-                case "GALLON_TO_LITRE":
+                case Unit.GALLON_TO_LITRE:
                     double gallonToLitre = value * 3.78;
                     return gallonToLitre;
-                case "LITRE_TO_MILLILITER":
+                case Unit.LITRE_TO_MILLILITER:
                     double litreToMililitre = value * 1000;
                     return litreToMililitre;
-                case "MILILITRE_TO_LITER":
+                case Unit.MILILITRE_TO_LITER:
                     double mililitreToLitre = value / 1000;
                     return mililitreToLitre;
                 default:
@@ -70,11 +73,11 @@ namespace QuantityMeasurementProblem
 
             if (unitOne == Unit.GALLON)
             {
-                firstValueInLitre = CompareVolume("GALLON_TO_LITRE", valueOne);
+                firstValueInLitre = CompareVolume(Unit.GALLON_TO_LITRE, valueOne);
             }
             else if (unitTwo == Unit.MILLILITER)
             {
-                secondValueInLitre = CompareVolume("MILILITRE_TO_LITER", valueTwo);
+                secondValueInLitre = CompareVolume(Unit.MILILITRE_TO_LITER, valueTwo);
             }
             return firstValueInLitre + secondValueInLitre;
         }

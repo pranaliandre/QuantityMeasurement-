@@ -181,23 +181,23 @@ namespace QuantityMeasurementTest
         /// Test Case 1.14 Given 1 Feet And 1 Inch Should Return Not Equal.
         /// </summary>
         [Test]
-        public void Given1FeetAnd1InchShouldReturnNotEqual()
+        public void Given1FeetAnd1Inch_ShouldReturnNotEqual()
         {
             //Creating Length Instances For Feet and Inch
-            Length feet = new Length(Length.Unit.FEET, 1.0);
-            Length inch = new Length(Length.Unit.INCH, 1.0);
+            double feet = compareLength.CompareLength(Length.Unit.FEET_TO_INCH, 1.0);
+            double inch = 1.0;
             //Asserting Values.
-            Assert.AreNotEqual(feet, inch);
+            Assert.AreNotEqual(inch, feet);
         }
         /// <summary>
         /// Test Case 1.15 Given 1 inch And 1 feet Should Return Not Equal.
         /// </summary>
         [Test]
-        public void Given1inchAnd1feetShouldReturnNotEqual()
+        public void Given1inchAnd1feet_ShouldReturnNotEqual()
         {
             //Creating Length Instances For Feet and Inch
-            Length feet = new Length(Length.Unit.INCH, 1.0);
-            Length inch = new Length(Length.Unit.FEET, 1.0);
+            double inch = compareLength.CompareLength(Length.Unit.INCH_TO_FEET, 1.0);
+            double feet = 1.0;
             //Asserting Values.
             Assert.AreNotEqual(feet, inch);
         }
@@ -208,10 +208,10 @@ namespace QuantityMeasurementTest
         public void Given1FeetAnd12Inch_ShouldReturnEqual()
         {
             //Creating Length Instances For Feet and Inch
-            Length feet = new Length(Length.Unit.FEET, 1.0);
-            Length inch = new Length(Length.Unit.INCH, 12.0);
+            double feet = compareLength.CompareLength(Length.Unit.FEET_TO_INCH, 1.0);
+            double inch = 12.0;
             //Asserting Values.
-            Assert.AreEqual(feet, inch);
+            Assert.AreEqual(inch, feet);
         }
         /// <summary>
         /// Test Case 1.17 Given 12 inch And 1 feet Should Return Equal.
@@ -220,8 +220,8 @@ namespace QuantityMeasurementTest
         public void Given12InchAnd1Feet_ShouldReturnEqual()
         {
             //Creating Length Instances For Feet and Inch
-            Length feet = new Length(Length.Unit.INCH, 12.0);
-            Length inch = new Length(Length.Unit.FEET, 1.0);
+            double inch = compareLength.CompareLength(Length.Unit.INCH_TO_FEET, 12.0);
+            double feet=1.0;
             //Asserting Values.
             Assert.AreEqual(feet, inch);
         }
@@ -231,8 +231,9 @@ namespace QuantityMeasurementTest
         [Test]
         public void Given3FeetAnd1Yard_ShouldReturnEqual()
         {
-            double threeFeet = compareLength.CompareLength("FEET_TO_YARD", 3.0);
+            double threeFeet = compareLength.CompareLength(Length.Unit.FEET_TO_YARD, 3.0);
             double oneYard = 1.0;
+            //Assert values
             Assert.AreEqual(oneYard, threeFeet);
         }
         /// <summary>
@@ -241,7 +242,7 @@ namespace QuantityMeasurementTest
         [Test]
         public void Given1FeetAnd1Yard_ShouldReturnEqual()
         {
-            double oneFeet = compareLength.CompareLength("FEET_TO_YARD", 1.0);
+            double oneFeet = compareLength.CompareLength(Length.Unit.FEET_TO_YARD, 1.0);
             double oneYard = 1.0;
             Assert.AreNotEqual(oneYard, oneFeet);
         }
@@ -251,7 +252,7 @@ namespace QuantityMeasurementTest
         [Test]
         public void Given1InchAnd1Yard_ShouldReturnNotEqual()
         {
-            double oneFeet = compareLength.CompareLength("INCH_TO_YARD", 1.0);
+            double oneFeet = compareLength.CompareLength(Length.Unit.INCH_TO_YARD, 1.0);
             double oneYard = 1.0;
             Assert.AreNotEqual(oneYard, oneFeet);
         }
@@ -261,7 +262,7 @@ namespace QuantityMeasurementTest
         [Test]
         public void Given1YardAnd36Inch_ShouldReturnEqual()
         {
-            double oneYard = compareLength.CompareLength("YARD_TO_INCH", 1.0);
+            double oneYard = compareLength.CompareLength(Length.Unit.YARD_TO_INCH, 1.0);
             double thirtySixInch = 36.0;
             Assert.AreEqual(oneYard, thirtySixInch);
         }
@@ -271,7 +272,7 @@ namespace QuantityMeasurementTest
         [Test]
         public void Given36InchAnd1Yard_ShouldReturnEqual()
         {
-            double thirtySixInch = compareLength.CompareLength("INCH_TO_YARD", 36.0);
+            double thirtySixInch = compareLength.CompareLength(Length.Unit.INCH_TO_YARD, 36.0);
             double oneYard = 1.0;
             Assert.AreEqual(thirtySixInch, oneYard);
         }
@@ -281,7 +282,7 @@ namespace QuantityMeasurementTest
         [Test]
         public void Given1InchAnd3Feet_ShouldReturnEqual()
         {
-            double oneYard = compareLength.CompareLength("YARD_TO_FEET", 1.0);
+            double oneYard = compareLength.CompareLength(Length.Unit.YARD_TO_FEET, 1.0);
             double threeFeet = 3.0;
             Assert.AreEqual(oneYard, threeFeet);
         }
@@ -291,7 +292,7 @@ namespace QuantityMeasurementTest
         [Test]
         public void Given2InchAnd5Centimeter_ShouldReturnEqual()
         {
-            double twoInch = compareLength.CompareLength("INCH_TO_CENTIMETER", 2.0);
+            double twoInch = compareLength.CompareLength(Length.Unit.INCH_TO_CENTIMETER, 2.0);
             double fiveCentimeter = 5.0;
             Assert.AreEqual(twoInch, fiveCentimeter);
         }
@@ -340,7 +341,7 @@ namespace QuantityMeasurementTest
         [Test]
         public void Given1GallonToLiters_ShouldReturnEqual()
         {
-            double oneGallon = compareVolume.CompareVolume("GALLON_TO_LITRE", 1.0);
+            double oneGallon = compareVolume.CompareVolume(Volume.Unit.GALLON_TO_LITRE, 1.0);
             double oneLiters = 3.78;
             Assert.AreEqual(oneLiters, oneGallon);
         }
@@ -350,7 +351,7 @@ namespace QuantityMeasurementTest
         [Test]
         public void Given1LitersAndOneThousandMiliLitre_ShouldReturnEqual()
         {
-            double oneLiter = compareVolume.CompareVolume("LITRE_TO_MILLILITER", 1.0);
+            double oneLiter = compareVolume.CompareVolume(Volume.Unit.LITRE_TO_MILLILITER, 1.0);
             double oneThousandMiliLitre = 1000;
             Assert.AreEqual(oneThousandMiliLitre, oneLiter);
         }
@@ -380,7 +381,7 @@ namespace QuantityMeasurementTest
         [Test]
         public void Given1KgAnd1000Gram_ShouldReturnEqual()
         {
-            double oneKilogram = compareWeight.CompareWeight("KILOGRAM_TO_GRAM", 1.0);
+            double oneKilogram = compareWeight.CompareWeight(Weight.Unit.KILOGRAM_TO_GRAM, 1.0);
             double oneThousandGrams = 1000;
             Assert.AreEqual(oneThousandGrams, oneKilogram);
         }
@@ -390,7 +391,7 @@ namespace QuantityMeasurementTest
         [Test]
         public void Given1TonneAnd1000Kilograms_ShouldReturnEqual()
         {
-            double oneKilogram = compareWeight.CompareWeight("TONNE_TO_KILOGRAM", 1.0);
+            double oneKilogram = compareWeight.CompareWeight(Weight.Unit.TONNE_TO_KILOGRAM, 1.0);
             double oneThousandKilograms = 1000;
             Assert.AreEqual(oneThousandKilograms, oneKilogram);
         }
@@ -410,7 +411,7 @@ namespace QuantityMeasurementTest
         [Test]
         public void GivenFahrenheitAnd_WhenCheck_ReturnEqual()
         {
-            double oneTonneOneThousandGram = compareTemperature.CompareTemperature("FAHRENHEIT_TO_CELCIUS", 212);
+            double oneTonneOneThousandGram = compareTemperature.CompareTemperature(Temperature.Unit.FAHRENHEIT_TO_CELCIUS, 212);
             double addTonneAndGram = 100;
             Assert.AreEqual(addTonneAndGram, oneTonneOneThousandGram);
         }

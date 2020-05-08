@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace QuantityMeasurementProblem
 {
     public class Temperature
@@ -16,9 +13,7 @@ namespace QuantityMeasurementProblem
         /// </summary>
         public enum Unit
         {
-            GALLON,
-            LITRE,
-            MILLILITER,
+        FAHRENHEIT_TO_CELCIUS
         };
         /// <summary>
         /// Default Constructor
@@ -40,11 +35,11 @@ namespace QuantityMeasurementProblem
         /// <param name="conversion"></param>
         /// <param name="fahrenheit"></param>
         /// <returns></returns>
-        public double CompareTemperature(string conversion, double fahrenheit)
+        public double CompareTemperature(Unit unit, double fahrenheit)
         {
-            switch (conversion)
+            switch (unit)
             {
-                case "FAHRENHEIT_TO_CELCIUS":
+                case Unit.FAHRENHEIT_TO_CELCIUS:
                     double Celcius = (fahrenheit - 32) * 5 / 9;
                     return Celcius;
                

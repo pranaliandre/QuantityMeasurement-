@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace QuantityMeasurementProblem
 {
     public class Weight
     {
+        /// <summary>
+        /// variable
+        /// </summary>
         Unit unit;
         readonly private double value;
         /// <summary>
@@ -16,6 +16,9 @@ namespace QuantityMeasurementProblem
             KILOGRAM,
             GRAM,
             TONNE,
+            KILOGRAM_TO_GRAM,
+            TONNE_TO_KILOGRAM,
+            GRAM_TO_KILOGRAM
         };
         /// <summary>
         /// Default Constructor
@@ -37,17 +40,17 @@ namespace QuantityMeasurementProblem
         /// <param name="conversion"></param>
         /// <param name="value"></param>
         /// <returns></returns>
-        public double CompareWeight(string conversion, double value)
+        public double CompareWeight(Unit unit, double value)
         {
-            switch (conversion)
+            switch (unit)
             {
-                case "KILOGRAM_TO_GRAM":
+                case Unit.KILOGRAM_TO_GRAM:
                     double kilogramToGram = value * 1000;
                     return kilogramToGram;
-                case "TONNE_TO_KILOGRAM":
+                case Unit.TONNE_TO_KILOGRAM:
                     double tonneToKilogram = value * 1000;
                     return tonneToKilogram;
-                case "GRAM_TO_KILOGRAM":
+                case Unit.GRAM_TO_KILOGRAM:
                     double gramToKilogram = value / 1000;
                     return gramToKilogram;
                 default:
@@ -69,11 +72,11 @@ namespace QuantityMeasurementProblem
             double secondValueInGrams = valueTwo;
             if (unitOne == Unit.TONNE)
             {
-                firstValueInGrams = CompareWeight("TONNE_TO_KILOGRAM", valueOne);
+                firstValueInGrams = CompareWeight(Unit.TONNE_TO_KILOGRAM, valueOne);
             }
             if (unitTwo == Unit.GRAM)
             {
-                secondValueInGrams = CompareWeight("GRAM_TO_KILOGRAM", valueTwo);
+                secondValueInGrams = CompareWeight(Unit.GRAM_TO_KILOGRAM, valueTwo);
             }
             return firstValueInGrams + secondValueInGrams;
         }
