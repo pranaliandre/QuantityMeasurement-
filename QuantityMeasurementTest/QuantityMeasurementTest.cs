@@ -9,6 +9,7 @@ namespace QuantityMeasurementTest
         readonly Length compareLength = new Length();
         readonly Volume compareVolume = new Volume();
         readonly Weight compareWeight = new Weight();
+        readonly Temperature compareTemperature = new Temperature();
         [SetUp]
         public void Setup()
         {
@@ -401,6 +402,16 @@ namespace QuantityMeasurementTest
         {
             double oneTonneOneThousandGram = compareWeight.AddTwoWeightInWeights(Weight.Unit.TONNE, 1.0, Weight.Unit.GRAM, 1000);
             double addTonneAndGram = 1001;
+            Assert.AreEqual(addTonneAndGram, oneTonneOneThousandGram);
+        }
+        /// <summary>
+        /// Test Case 1.36 Given Fahrenheit And celcius when check  Should Return Equal.
+        /// </summary>
+        [Test]
+        public void GivenFahrenheitAnd_WhenCheck_ReturnEqual()
+        {
+            double oneTonneOneThousandGram = compareTemperature.CompareTemperature("FAHRENHEIT_TO_CELCIUS", 212);
+            double addTonneAndGram = 100;
             Assert.AreEqual(addTonneAndGram, oneTonneOneThousandGram);
         }
     }
