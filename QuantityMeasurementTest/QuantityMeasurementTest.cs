@@ -352,5 +352,25 @@ namespace QuantityMeasurementTest
             double oneThousandMiliLitre = 1000;
             Assert.AreEqual(oneThousandMiliLitre, oneLiter);
         }
+        /// <summary>
+        /// Test Case 1.31 Given 1 gallon And 3.78 litre Should Return Equal.
+        /// </summary>
+        [Test]
+        public void GivenGallonAndLiters_ReturnAdditionInLiters()
+        {
+            double addTwo = compareVolume.AddTwoVolumesInLitres(Volume.Unit.GALLON, 1, Volume.Unit.LITRE, 3.78);
+            double addTwoInch = 7.56;
+            Assert.AreEqual(addTwoInch, addTwo,0.0);
+        }
+        /// <summary>
+        /// Test Case 1.32 Given 1 liter And 1000 millitre Should Return Equal.
+        /// </summary>
+        [Test]
+        public void GivenOneLitreAndOneThousandMiliLitre_ReturnAddInLitre()
+        {
+            double oneLitreOneThousandMiliLitre = compareVolume.AddTwoVolumesInLitres(Volume.Unit.LITRE, 1.0, Volume.Unit.MILLILITER, 1000);
+            double addInLitre = 2;
+            Assert.AreEqual(addInLitre, oneLitreOneThousandMiliLitre);
+        }
     }
 }
